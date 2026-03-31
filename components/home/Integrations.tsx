@@ -6,7 +6,7 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="py-14 bg-white border-y border-slate-100">
+    <section className="py-14 bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-medium text-slate-400 uppercase tracking-widest mb-8">
           Plugs into the tools your team already uses

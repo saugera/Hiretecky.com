@@ -30,8 +30,8 @@ export default function ROICalculator() {
   const savingsPct = Math.round((monthlySavings / humanMonthly) * 100)
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-slate-50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
             Calculate Your Savings

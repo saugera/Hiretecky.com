@@ -38,14 +38,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Teams That Made the Switch
           </h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto">
-            Real results from companies that deployed AI agents through Hiretecky.
+            Real results from companies that deployed AI agents through Hiretecky — in their own words.
           </p>
         </div>
 

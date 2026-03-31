@@ -4,7 +4,7 @@ import { Users, Award, HeartHandshake, FlaskConical } from 'lucide-react'
 export default function Differentiators() {
   return (
     <section className="py-20 bg-slate-900 text-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">
             Why Hiretecky
