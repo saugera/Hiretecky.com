@@ -17,15 +17,15 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-          Stop Hiring Humans.<br />
-          <span className="text-indigo-600">Hire AI Agents.</span>
+          Automate the Repetitive.<br />
+          <span className="text-indigo-600">Scale with AI Agents.</span>
         </h1>
 
         {/* Sub-headline */}
         <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed">
-          Hiretecky is the marketplace where growing companies hire AI Agents for Sales,
-          Support, HR, Finance, and more — at a fraction of the cost, available 24/7,
-          and deployed in days, not months.
+          Hiretecky is the marketplace where growing companies deploy AI Agents for Sales,
+          Support, HR, Finance, and more — freeing your team to focus on the work
+          that truly needs a human touch.
         </p>
 
         {/* CTAs */}
@@ -38,10 +38,10 @@ export default function Hero() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/request"
+            href="/demo"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-slate-700 font-semibold rounded-xl border border-slate-300 hover:border-indigo-300 hover:text-indigo-600 transition-colors"
           >
-            Request Custom Agent
+            Book a Free Demo
           </Link>
         </div>
 

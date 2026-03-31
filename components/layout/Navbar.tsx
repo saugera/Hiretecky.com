@@ -8,7 +8,9 @@ import { cn } from '@/lib/utils'
 
 const navLinks = [
   { label: 'Browse Agents', href: '/agents' },
-  { label: 'Request Custom', href: '/request' },
+  { label: 'Solutions', href: '/solutions/ai-sales-agents' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
 ]
 
@@ -48,6 +50,12 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/demo"
+              className="px-4 py-2 text-sm font-medium text-slate-700 border border-slate-300 rounded-lg hover:border-indigo-300 hover:text-indigo-600 transition-colors"
+            >
+              Book Demo
+            </Link>
             <Link
               href="/request"
               className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
