@@ -1,65 +1,82 @@
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
 import { Metadata } from 'next'
+import { absoluteUrl, jsonLd } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Blog — AI Agent Insights for Business Leaders | Hiretecky',
-  description: 'Practical guides, ROI analyses, and case studies on deploying AI agents for sales, support, HR, and more.',
+  title: 'Blog - AI Agent Insights for Business Leaders',
+  description:
+    'Practical guides, ROI analyses, and case studies on deploying AI agents for sales, support, HR, and more.',
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 const posts = [
   {
     slug: 'replace-sdr-with-ai-agent',
     title: 'Can You Really Replace Your SDR Team with an AI Agent?',
-    excerpt: 'A practical breakdown of what AI sales agents can and cannot do in 2026 — with real numbers from 50+ deployments.',
+    excerpt:
+      'A practical breakdown of what AI sales agents can and cannot do in 2026 - with real numbers from 50+ deployments.',
     category: 'Sales',
     readTime: '7 min read',
-    date: 'March 28, 2026',
+    date: '2026-03-28',
+    displayDate: 'March 28, 2026',
     featured: true,
   },
   {
     slug: 'ai-customer-support-roi',
     title: 'The Real ROI of AI Customer Support: A 12-Month Study',
-    excerpt: 'We tracked 30 companies that deployed AI support agents. Here\'s what they saved, where they struggled, and what they\'d do differently.',
+    excerpt:
+      "We tracked 30 companies that deployed AI support agents. Here's what they saved, where they struggled, and what they'd do differently.",
     category: 'Customer Support',
     readTime: '9 min read',
-    date: 'March 20, 2026',
+    date: '2026-03-20',
+    displayDate: 'March 20, 2026',
     featured: true,
   },
   {
     slug: 'how-to-build-business-case-ai-agents',
     title: 'How to Build the Business Case for AI Agents (Board-Ready Template)',
-    excerpt: 'A plug-and-play framework for presenting AI agent ROI to your leadership team — including the numbers they\'ll actually ask about.',
+    excerpt:
+      "A plug-and-play framework for presenting AI agent ROI to your leadership team - including the numbers they'll actually ask about.",
     category: 'Strategy',
     readTime: '5 min read',
-    date: 'March 12, 2026',
+    date: '2026-03-12',
+    displayDate: 'March 12, 2026',
     featured: false,
   },
   {
     slug: 'ai-agents-vs-rpa',
-    title: 'AI Agents vs. RPA: What\'s the Difference and Which Do You Need?',
-    excerpt: 'RPA automates clicks. AI agents reason and adapt. Here\'s when to use each — and when to use both.',
+    title: "AI Agents vs. RPA: What's the Difference and Which Do You Need?",
+    excerpt:
+      "RPA automates clicks. AI agents reason and adapt. Here's when to use each - and when to use both.",
     category: 'Education',
     readTime: '6 min read',
-    date: 'March 5, 2026',
+    date: '2026-03-05',
+    displayDate: 'March 5, 2026',
     featured: false,
   },
   {
     slug: 'ai-recruiting-bias',
     title: 'Does AI Recruiting Introduce Bias? The Honest Answer.',
-    excerpt: 'We don\'t sugarcoat it: AI recruiting has bias risks. Here\'s how we identify them, measure them, and mitigate them in every deployment.',
+    excerpt:
+      "We don't sugarcoat it: AI recruiting has bias risks. Here's how we identify them, measure them, and mitigate them in every deployment.",
     category: 'HR & Recruiting',
     readTime: '8 min read',
-    date: 'February 26, 2026',
+    date: '2026-02-26',
+    displayDate: 'February 26, 2026',
     featured: false,
   },
   {
     slug: '2026-ai-agent-playbook',
     title: 'The 2026 AI Agent Playbook for Business Leaders',
-    excerpt: 'Which roles can be automated today, which should be augmented, and how to phase your deployment without disrupting your team.',
+    excerpt:
+      'Which roles can be automated today, which should be augmented, and how to phase your deployment without disrupting your team.',
     category: 'Strategy',
     readTime: '12 min read',
-    date: 'February 15, 2026',
+    date: '2026-02-15',
+    displayDate: 'February 15, 2026',
     featured: false,
   },
 ]
@@ -73,12 +90,29 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function BlogPage() {
-  const featured = posts.filter(p => p.featured)
-  const rest = posts.filter(p => !p.featured)
+  const featured = posts.filter((p) => p.featured)
+  const rest = posts.filter((p) => !p.featured)
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Hiretecky Blog',
+    url: absoluteUrl('/blog'),
+    blogPost: posts.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: absoluteUrl(`/blog/${post.slug}`),
+      datePublished: post.date,
+      description: post.excerpt,
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(blogJsonLd) }}
+      />
+
       <div className="bg-slate-50 border-b border-slate-200 py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Insights & Guides</h1>
@@ -89,12 +123,15 @@ export default function BlogPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-        {/* Featured posts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {featured.map((post) => (
-            <div key={post.slug} className="group rounded-2xl border border-slate-200 overflow-hidden hover:border-indigo-300 hover:shadow-md transition-all">
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group rounded-2xl border border-slate-200 overflow-hidden hover:border-indigo-300 hover:shadow-md transition-all block"
+            >
               <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 h-32 flex items-end p-5">
-                <span className={`px-2.5 py-1 text-xs font-semibold rounded-full border bg-white text-indigo-700 border-indigo-200`}>
+                <span className="px-2.5 py-1 text-xs font-semibold rounded-full border bg-white text-indigo-700 border-indigo-200">
                   {post.category}
                 </span>
               </div>
@@ -108,25 +145,32 @@ export default function BlogPage() {
                     <Clock className="w-3 h-3" />
                     {post.readTime}
                   </div>
-                  <span>{post.date}</span>
+                  <span>{post.displayDate}</span>
                 </div>
                 <div className="mt-4 flex items-center gap-1 text-sm text-indigo-600 font-medium">
                   Read article
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* All posts */}
         <h2 className="text-lg font-semibold text-slate-800 mb-5">All Articles</h2>
         <div className="divide-y divide-slate-100">
           {rest.map((post) => (
-            <div key={post.slug} className="group py-5 flex gap-4">
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group py-5 flex gap-4 block"
+            >
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className={`px-2.5 py-0.5 text-xs font-medium rounded-full border ${categoryColors[post.category] || 'bg-slate-50 text-slate-700 border-slate-200'}`}>
+                  <span
+                    className={`px-2.5 py-0.5 text-xs font-medium rounded-full border ${
+                      categoryColors[post.category] || 'bg-slate-50 text-slate-700 border-slate-200'
+                    }`}
+                  >
                     {post.category}
                   </span>
                 </div>
@@ -140,13 +184,12 @@ export default function BlogPage() {
                   <Clock className="w-3 h-3" />
                   {post.readTime}
                 </div>
-                <div>{post.date}</div>
+                <div>{post.displayDate}</div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Coming soon */}
         <div className="mt-10 bg-indigo-50 rounded-2xl border border-indigo-200 p-6 text-center">
           <p className="text-indigo-800 font-semibold mb-1">More articles coming weekly</p>
           <p className="text-indigo-600 text-sm mb-4">

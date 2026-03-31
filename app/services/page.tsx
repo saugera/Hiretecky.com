@@ -2,11 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Check, CheckCircle2, ChevronRight } from 'lucide-react'
 import { services } from '@/lib/services'
+import { absoluteUrl, jsonLd } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Hiretecky Services | AI-Powered Delivery Across Every Function',
   description:
     'Explore every Hiretecky service in one place, from software development and sales to support, recruiting, marketing, and analytics.',
+  alternates: {
+    canonical: '/services',
+  },
 }
 
 const accentMap: Record<string, string> = {
@@ -28,8 +32,25 @@ const softAccentMap: Record<string, string> = {
 }
 
 export default function ServicesPage() {
+  const servicesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Hiretecky Services',
+    itemListElement: services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: service.title,
+      url: absoluteUrl(`/services/${service.slug}`),
+      description: service.metaDescription,
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(servicesJsonLd) }}
+      />
       <section className="relative overflow-hidden bg-slate-950">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.28),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.18),_transparent_24%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">

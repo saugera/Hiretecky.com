@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-slate-900 text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 text-white font-bold text-lg mb-3">
               <span className="flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-lg">
@@ -15,7 +14,8 @@ export default function Footer() {
               Hire<span className="text-indigo-400">tecky</span>
             </Link>
             <p className="text-sm leading-relaxed mb-4 max-w-xs">
-              The marketplace where companies deploy AI Agents for Sales, Support, HR, Finance, and more — 24/7, at a fraction of the cost.
+              Hiretecky helps companies deploy AI agent services for software development,
+              sales, support, recruiting, marketing, and analytics workflows.
             </p>
             <div className="flex items-center gap-3 mt-2">
               <a href="https://hiretecky.com" className="hover:text-white transition-colors" aria-label="Website">
@@ -27,19 +27,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-3">Solutions</h4>
+            <h4 className="text-white font-semibold text-sm mb-3">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/solutions/ai-sales-agents" className="hover:text-white transition-colors">AI Sales Agents</Link></li>
-              <li><Link href="/solutions/ai-customer-support" className="hover:text-white transition-colors">AI Customer Support</Link></li>
-              <li><Link href="/solutions/ai-recruiting-software" className="hover:text-white transition-colors">AI Recruiting</Link></li>
-              <li><Link href="/solutions/ai-marketing-automation" className="hover:text-white transition-colors">AI Marketing</Link></li>
-              <li><Link href="/agents" className="hover:text-white transition-colors">Browse All Agents</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">All Services</Link></li>
+              <li><Link href="/services/software-development" className="hover:text-white transition-colors">Software Development</Link></li>
+              <li><Link href="/services/sales-lead-generation" className="hover:text-white transition-colors">Sales & Lead Generation</Link></li>
+              <li><Link href="/services/customer-support" className="hover:text-white transition-colors">Customer Support</Link></li>
+              <li><Link href="/services/hr-recruiting" className="hover:text-white transition-colors">HR & Recruiting</Link></li>
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-3">Company</h4>
             <ul className="space-y-2 text-sm">
@@ -52,7 +50,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-3">Legal</h4>
             <ul className="space-y-2 text-sm">

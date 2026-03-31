@@ -1,5 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Bot, Target, Users, TrendingUp } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'About Hiretecky',
+  description:
+    'Learn how Hiretecky evolved from traditional consulting into an AI agent services company focused on real business outcomes.',
+  alternates: {
+    canonical: '/about',
+  },
+}
 
 export default function AboutPage() {
   return (

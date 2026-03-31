@@ -7,6 +7,7 @@ import { Menu, X, Bot } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
+  { label: 'Services', href: '/services' },
   { label: 'Browse Agents', href: '/agents' },
   { label: 'Solutions', href: '/solutions/ai-sales-agents' },
   { label: 'Compare Tools', href: '/compare' },

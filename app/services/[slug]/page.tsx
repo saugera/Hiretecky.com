@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { getAgentBySlug } from '@/lib/agents'
 import { getServiceBySlug, services } from '@/lib/services'
+import { absoluteUrl, jsonLd } from '@/lib/site'
 
 const accentMap: Record<string, string> = {
   slate: 'bg-slate-900 text-white',
@@ -47,7 +48,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<'/services/[slug]'>
+  props: {
+    params: Promise<{ slug: string }>
+  }
 ): Promise<Metadata> {
   const { slug } = await props.params
   const service = getServiceBySlug(slug)
@@ -59,11 +62,16 @@ export async function generateMetadata(
   return {
     title: service.metaTitle,
     description: service.metaDescription,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
   }
 }
 
 export default async function ServiceDetailPage(
-  props: PageProps<'/services/[slug]'>
+  props: {
+    params: Promise<{ slug: string }>
+  }
 ) {
   const { slug } = await props.params
   const service = getServiceBySlug(slug)
@@ -84,8 +92,51 @@ export default async function ServiceDetailPage(
     'Month-to-month plans',
   ]
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    url: absoluteUrl(`/services/${service.slug}`),
+    description: service.metaDescription,
+    provider: {
+      '@type': 'Organization',
+      name: 'Hiretecky',
+      url: absoluteUrl('/'),
+    },
+    serviceType: service.shortTitle,
+    areaServed: 'Worldwide',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: service.startingPrice,
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl(`/request?service=${service.slug}`),
+    },
+  }
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: service.faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(faqJsonLd) }}
+      />
       <section className="relative overflow-hidden bg-slate-950">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.28),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.18),_transparent_24%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
