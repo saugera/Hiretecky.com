@@ -48,7 +48,7 @@ export default function Footer() {
               <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
               <li><Link href="/demo" className="hover:text-white transition-colors">Book a Demo</Link></li>
               <li><Link href="/request" className="hover:text-white transition-colors">Request Custom Agent</Link></li>
-              <li><a href="mailto:hello@hiretecky.com" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
