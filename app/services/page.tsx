@@ -1,199 +1,316 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, Check, CheckCircle2, ChevronRight } from 'lucide-react'
 import { services } from '@/lib/services'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Agent Services | Hiretecky',
-  description: 'Deploy AI agents for software development, sales, customer support, HR, marketing, and data analytics — starting at $299/month.',
+  title: 'Hiretecky Services | AI-Powered Delivery Across Every Function',
+  description:
+    'Explore every Hiretecky service in one place, from software development and sales to support, recruiting, marketing, and analytics.',
 }
 
-const colorAccentMap: Record<string, string> = {
-  slate: 'bg-slate-800',
-  indigo: 'bg-indigo-600',
-  blue: 'bg-blue-600',
-  violet: 'bg-violet-600',
-  pink: 'bg-pink-600',
-  cyan: 'bg-cyan-600',
+const accentMap: Record<string, string> = {
+  slate: 'bg-slate-900 text-white',
+  indigo: 'bg-indigo-600 text-white',
+  blue: 'bg-blue-600 text-white',
+  violet: 'bg-violet-600 text-white',
+  pink: 'bg-pink-600 text-white',
+  cyan: 'bg-cyan-600 text-white',
 }
 
-const colorBorderMap: Record<string, string> = {
-  slate: 'border-slate-300 hover:border-slate-400',
-  indigo: 'border-indigo-200 hover:border-indigo-400',
-  blue: 'border-blue-200 hover:border-blue-400',
-  violet: 'border-violet-200 hover:border-violet-400',
-  pink: 'border-pink-200 hover:border-pink-400',
-  cyan: 'border-cyan-200 hover:border-cyan-400',
-}
-
-const colorTextMap: Record<string, string> = {
-  slate: 'text-slate-700',
-  indigo: 'text-indigo-600',
-  blue: 'text-blue-600',
-  violet: 'text-violet-600',
-  pink: 'text-pink-600',
-  cyan: 'text-cyan-600',
+const softAccentMap: Record<string, string> = {
+  slate: 'bg-slate-100 text-slate-700 border-slate-200',
+  indigo: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+  blue: 'bg-blue-50 text-blue-700 border-blue-200',
+  violet: 'bg-violet-50 text-violet-700 border-violet-200',
+  pink: 'bg-pink-50 text-pink-700 border-pink-200',
+  cyan: 'bg-cyan-50 text-cyan-700 border-cyan-200',
 }
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
+      <section className="relative overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.28),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.18),_transparent_24%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-300">
+              Hiretecky Services
+            </p>
+            <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              One page for every service Hiretecky can provide
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              Hiretecky packages AI-powered delivery into managed services across software,
+              sales, support, recruiting, marketing, and analytics. Everything below lives on
+              one page so buyers can compare options without jumping between routes.
+            </p>
+          </div>
 
-      {/* Hero */}
-      <section className="bg-slate-900 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest mb-3">AI Agent Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-            Replace Headcount<br className="hidden sm:block" /> With AI Agents
-          </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
-            From software development to sales, support to recruiting — we deploy AI agents
-            that work inside your existing tools, at a fraction of the cost of hiring.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-300">
+            {[
+              'Managed implementation',
+              'Deploy in 48 hours',
+              'Month-to-month options',
+              'Human review built in',
+            ].map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2"
+              >
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-3">
             <Link
               href="/demo"
-              className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors text-sm"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-slate-100 transition-colors"
             >
-              Book a Free Demo
+              Book a Demo
             </Link>
             <Link
               href="/request"
-              className="px-6 py-3 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors text-sm"
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
             >
-              Request Custom Agent
+              Request Custom Setup
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Trust bar */}
-      <div className="bg-slate-50 border-b border-slate-200 py-4">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-slate-500">
-            {['14-day performance guarantee', 'No long-term contracts', 'Live in 48 hours', 'SOC 2 compliant', 'Built by staffing veterans'].map((t) => (
-              <span key={t} className="flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Services grid */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-              Six Ways to Deploy AI Agents
-            </h2>
-            <p className="text-slate-600 max-w-xl mx-auto">
-              Each service is a managed deployment — we configure, train, and maintain the agent so your team can focus on outcomes, not operations.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="border-b border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-wrap gap-3">
             {services.map((service) => {
-              const accent = colorAccentMap[service.color] || 'bg-indigo-600'
-              const border = colorBorderMap[service.color] || 'border-indigo-200 hover:border-indigo-400'
-              const text = colorTextMap[service.color] || 'text-indigo-600'
+              const softAccent =
+                softAccentMap[service.color] ??
+                'bg-indigo-50 text-indigo-700 border-indigo-200'
 
               return (
-                <Link
+                <a
                   key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className={`group flex flex-col bg-white rounded-2xl border ${border} p-6 transition-all hover:shadow-md`}
+                  href={`#${service.slug}`}
+                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:opacity-90 ${softAccent}`}
                 >
-                  <div className={`w-12 h-12 rounded-xl ${accent} flex items-center justify-center text-2xl mb-4 shrink-0`}>
-                    {service.icon}
-                  </div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">{service.shortTitle}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1">{service.tagline}</p>
-
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                    <span className="text-xs text-slate-400">
-                      From <span className="font-semibold text-slate-700">${service.startingPrice.toLocaleString()}/mo</span>
-                    </span>
-                    <span className={`text-sm font-medium ${text} flex items-center gap-1 group-hover:gap-2 transition-all`}>
-                      Learn more <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </Link>
+                  <span>{service.icon}</span>
+                  {service.shortTitle}
+                </a>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* Why Hiretecky */}
-      <section className="py-16 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-              Why Companies Choose Hiretecky
-            </h2>
-            <p className="text-slate-600 max-w-xl mx-auto">
-              We&apos;re not a software vendor. We&apos;re a staffing firm that replaced humans with AI — and we bring that operational experience to every deployment.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                title: 'Built by Hiring Experts',
-                body: 'We spent 10 years placing human workers. Now we deploy AI agents the same way — matching the right capability to the right role.',
+                title: 'Built as managed services',
+                body: 'Hiretecky handles setup, workflow design, tuning, and reporting instead of dropping software on your team and walking away.',
               },
               {
-                title: 'Managed, Not Just Licensed',
-                body: 'You get a deployed, configured, and maintained agent — not a SaaS login and a support ticket queue.',
+                title: 'Designed around real business roles',
+                body: 'Each service is framed around the work companies actually buy: pipeline generation, ticket resolution, code delivery, recruiting throughput, and more.',
               },
               {
-                title: 'Works in Your Stack',
-                body: 'Agents integrate with the tools your team already uses — Slack, Salesforce, GitHub, Zendesk, and 40+ others.',
-              },
-              {
-                title: '14-Day Guarantee',
-                body: 'If the agent doesn\'t hit agreed performance benchmarks in the first 14 days, we refund your setup fee in full.',
-              },
-              {
-                title: 'No Long-Term Lock-In',
-                body: 'Month-to-month plans on all tiers. Cancel anytime. We keep customers through results, not contracts.',
-              },
-              {
-                title: 'SOC 2 Compliant',
-                body: 'Enterprise-grade security with end-to-end encryption, SSO support, and data residency options for regulated industries.',
+                title: 'Easy to compare on one URL',
+                body: 'Leadership can scan what each service covers, what it integrates with, and how rollout works without opening six different tabs.',
               },
             ].map((item) => (
-              <div key={item.title} className="bg-white rounded-2xl border border-slate-200 p-5">
-                <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.body}</p>
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+                <h2 className="text-lg font-bold text-slate-900">{item.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-indigo-600">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Not sure where to start?
+      <div className="bg-white">
+        {services.map((service, index) => {
+          const accent = accentMap[service.color] ?? 'bg-indigo-600 text-white'
+          const softAccent =
+            softAccentMap[service.color] ?? 'bg-indigo-50 text-indigo-700 border-indigo-200'
+
+          return (
+            <section
+              key={service.slug}
+              id={service.slug}
+              className={index % 2 === 0 ? 'bg-white' : 'bg-slate-50 border-y border-slate-200'}
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_360px]">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span
+                        className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl text-3xl ${accent}`}
+                      >
+                        {service.icon}
+                      </span>
+                      <span
+                        className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] ${softAccent}`}
+                      >
+                        {service.shortTitle}
+                      </span>
+                    </div>
+
+                    <h2 className="mt-6 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                      {service.title}
+                    </h2>
+                    <p className="mt-4 text-lg text-slate-600">{service.tagline}</p>
+                    <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
+                      {service.overview}
+                    </p>
+
+                    <div className="mt-8 grid gap-4 md:grid-cols-2">
+                      {service.whatWeDo.slice(0, 4).map((item) => (
+                        <div
+                          key={item.title}
+                          className="rounded-2xl border border-slate-200 bg-white p-5"
+                        >
+                          <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
+                          <p className="mt-2 text-sm leading-7 text-slate-600">{item.body}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-10 grid gap-8 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                          Deliverables
+                        </p>
+                        <div className="mt-4 space-y-3">
+                          {service.deliverables.map((item) => (
+                            <div key={item} className="flex items-start gap-3">
+                              <span
+                                className={`mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${accent}`}
+                              >
+                                <Check className="w-3.5 h-3.5" />
+                              </span>
+                              <span className="text-sm leading-6 text-slate-700">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                          Technologies
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {service.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className={`rounded-full border px-3 py-1.5 text-sm font-medium ${softAccent}`}
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-10">
+                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                        Rollout Process
+                      </p>
+                      <div className="mt-4 grid gap-4 lg:grid-cols-4">
+                        {service.process.map((step) => (
+                          <div
+                            key={`${service.slug}-${step.step}`}
+                            className="rounded-2xl border border-slate-200 bg-white p-5"
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              <span
+                                className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${softAccent}`}
+                              >
+                                Step {step.step}
+                              </span>
+                              <ChevronRight className="w-4 h-4 text-slate-300" />
+                            </div>
+                            <h3 className="mt-4 text-base font-bold text-slate-900">
+                              {step.title}
+                            </h3>
+                            <p className="mt-2 text-sm leading-7 text-slate-600">
+                              {step.body}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <aside className="space-y-5">
+                    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <p className="text-sm font-semibold text-slate-500">Starting from</p>
+                      <div className="mt-3 flex items-end gap-2">
+                        <span className="text-4xl font-bold text-slate-900">
+                          ${service.startingPrice}
+                        </span>
+                        <span className="pb-1 text-sm text-slate-500">per month</span>
+                      </div>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">
+                        Managed delivery for teams that want outcomes without growing headcount.
+                      </p>
+
+                      <div className="mt-6 space-y-3">
+                        {service.faqs.slice(0, 2).map((faq) => (
+                          <div key={faq.q} className="rounded-2xl bg-slate-50 p-4">
+                            <h3 className="text-sm font-semibold text-slate-900">{faq.q}</h3>
+                            <p className="mt-2 text-sm leading-6 text-slate-600">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 space-y-3">
+                        <Link
+                          href={`/request?service=${service.slug}`}
+                          className={`inline-flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold ${accent}`}
+                        >
+                          Request {service.shortTitle}
+                        </Link>
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:border-slate-400 transition-colors"
+                        >
+                          Open detail page
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </section>
+          )
+        })}
+      </div>
+
+      <section className="bg-indigo-600 py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl font-bold text-white">
+            Need help choosing the right service mix?
           </h2>
-          <p className="text-indigo-200 mb-7">
-            Book a 30-minute call. We&apos;ll map your highest-ROI use case and give you a deployment plan — no sales pressure.
+          <p className="mt-4 text-lg leading-8 text-indigo-100">
+            We can scope one service or combine several into a broader AI delivery plan for your
+            team.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/demo"
-              className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-xl text-sm hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors"
             >
-              Book a Free Demo
+              Book a Demo
             </Link>
             <Link
               href="/contact"
-              className="px-6 py-3 bg-white/10 text-white font-semibold rounded-xl border border-white/30 text-sm hover:bg-white/20 transition-colors"
+              className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
             >
-              Ask a Question
+              Contact Hiretecky
             </Link>
           </div>
         </div>
