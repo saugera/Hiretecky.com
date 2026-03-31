@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Zap, Shield, Clock } from 'lucide-react'
+import { ArrowRight, Zap, Shield, Clock, Star } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -9,10 +9,10 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100 rounded-full opacity-30 blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center">
-        {/* Badge */}
+        {/* Unique positioning badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-medium mb-6">
-          <Zap className="w-3.5 h-3.5" />
-          The Future of Work Has Arrived
+          <Star className="w-3.5 h-3.5 fill-indigo-400" />
+          Built by staffing veterans who know what good hiring looks like
         </div>
 
         {/* Headline */}
@@ -21,12 +21,17 @@ export default function Hero() {
           <span className="text-indigo-600">Scale with AI Agents.</span>
         </h1>
 
-        {/* Sub-headline */}
-        <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed">
-          Hiretecky is the marketplace where growing companies deploy AI Agents for Sales,
-          Support, HR, Finance, and more — freeing your team to focus on the work
-          that truly needs a human touch.
+        {/* Sub-headline with sharper differentiation */}
+        <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-6 leading-relaxed">
+          We spent 10 years helping companies hire great humans. Now we help them deploy
+          AI Agents for the roles that don't need one — Sales, Support, HR, Finance, and more.
         </p>
+
+        {/* Guarantee callout */}
+        <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-full mb-10">
+          <Shield className="w-4 h-4 text-emerald-600" />
+          14-Day Performance Guarantee — if your agent underperforms, we fix it or refund you
+        </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -66,8 +71,8 @@ export default function Hero() {
           {[
             { value: '500+', label: 'Companies Hiring' },
             { value: '8', label: 'Agent Categories' },
-            { value: '80%', label: 'Cost Reduction' },
-            { value: '24/7', label: 'Always On' },
+            { value: '80%', label: 'Avg. Cost Reduction' },
+            { value: '10yr', label: 'Hiring Expertise' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl font-bold text-slate-900">{stat.value}</div>

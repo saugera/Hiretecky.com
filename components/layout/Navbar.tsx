@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils'
 const navLinks = [
   { label: 'Browse Agents', href: '/agents' },
   { label: 'Solutions', href: '/solutions/ai-sales-agents' },
+  { label: 'Compare Tools', href: '/compare' },
   { label: 'Blog', href: '/blog' },
-  { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
 ]
 
