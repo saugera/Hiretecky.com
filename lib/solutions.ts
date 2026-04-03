@@ -101,6 +101,29 @@ export const solutions: Solution[] = [
     ],
     color: 'pink',
   },
+  {
+    slug: 'ai-healthcare-agents',
+    agentSlug: 'support-iq',
+    title: 'AI Agents for Healthcare',
+    metaTitle: 'AI Agents for Healthcare — Admin, Compliance & Patient Ops | Hiretecky',
+    metaDescription: 'Deploy HIPAA-aware AI agents that automate healthcare administrative workflows, compliance tracking, prior authorizations, and patient communications — without replacing clinical staff.',
+    headline: 'Cut Healthcare Admin Burden by 60% with AI Agents',
+    subheadline: 'HIPAA-aware AI agents that handle prior auths, scheduling, compliance tracking, and patient communications — so your clinical staff can focus on care.',
+    keywords: ['AI healthcare agents', 'healthcare administrative automation', 'HIPAA AI', 'prior authorization automation', 'healthcare compliance AI', 'patient communication AI'],
+    benefits: [
+      { title: 'Prior authorization at machine speed', body: 'AI agents pull clinical documentation, populate payer forms, submit requests, and track status — reducing the average prior auth cycle from 7 days to under 24 hours.' },
+      { title: 'HIPAA-compliant by architecture', body: 'All agents run in isolated, encrypted environments with BAA support, audit logging, and zero data retention beyond the session — built for regulated healthcare environments.' },
+      { title: 'Patient communication automation', body: 'Appointment reminders, no-show follow-ups, post-visit surveys, and care gap outreach — delivered across SMS, email, and patient portal, fully compliant.' },
+      { title: 'Compliance & credentialing support', body: 'Track provider credential renewals, payer enrollment deadlines, and regulatory filing requirements — with proactive alerts before anything lapses.' },
+    ],
+    faqs: [
+      { q: 'Are your AI agents HIPAA compliant?', a: 'Yes. We sign a Business Associate Agreement (BAA) with every healthcare customer. Our infrastructure uses isolated tenant environments, AES-256 encryption at rest, TLS 1.3 in transit, and full audit logging. No PHI is used for model training.' },
+      { q: 'Do the agents replace clinical staff?', a: 'No. Our agents exclusively handle administrative workflows — scheduling, authorizations, billing queries, compliance tracking, and patient communications. Clinical decision-making remains entirely with your licensed staff.' },
+      { q: 'Which EHR systems can you integrate with?', a: 'We support HL7 FHIR-compliant integrations with Epic, Cerner, Athenahealth, and eClinicalWorks. Custom EHR integrations are scoped during the enterprise onboarding process.' },
+      { q: 'How long does implementation take for a health system?', a: 'Typical enterprise health system deployments take 4–6 weeks including HIPAA controls review, EHR integration, workflow configuration, and staff training. Smaller practices can go live in 1–2 weeks.' },
+    ],
+    color: 'blue',
+  },
 ]
 
 export function getSolutionBySlug(slug: string): Solution | undefined {

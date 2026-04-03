@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { ArrowRight, Search, Zap, CheckCircle } from 'lucide-react'
+import { ArrowRight, Search, Zap, CheckCircle, Shield, Building2 } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Compare AI Tools → Implement with Hiretecky',
-  description: 'Research and compare AI tools at WeCompareAI.com, then let Hiretecky deploy the right agents for your business. Discovery to deployment in one pipeline.',
+  title: 'Compare AI Tools → Deploy with Hiretecky',
+  description: 'Research and compare AI tools at WeCompareAI.com, then let Hiretecky deploy the right agents for your business — with enterprise security, HIPAA compliance, and a 14-day guarantee.',
 }
 
 const comparisons = [
@@ -31,6 +31,12 @@ const comparisons = [
     answer: "Compare platforms on WeCompareAI. Hiretecky then deploys ContentFlow AI — trained on your brand voice, connected to your CMS.",
     link: '/solutions/ai-marketing-automation',
     linkLabel: 'See our AI Marketing Agent →',
+  },
+  {
+    question: 'Need AI agents for healthcare operations?',
+    answer: "HIPAA-aware AI agents for prior auths, patient communications, scheduling, and compliance tracking — built for regulated environments.",
+    link: '/solutions/ai-healthcare-agents',
+    linkLabel: 'See Healthcare AI Agents →',
   },
 ]
 
@@ -140,17 +146,76 @@ export default function ComparePage() {
         </div>
       </section>
 
+      {/* Enterprise security moat */}
+      <section className="py-14 bg-slate-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="grid sm:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest">Enterprise Security</p>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-4">
+                The most secure way to deploy AI agents in the enterprise
+              </h2>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                Most AI tools that show up in comparison directories are SaaS products — they share infrastructure, log your data, and lack the compliance controls that enterprise security teams require. Hiretecky is different: isolated tenant environments, full audit trails, HIPAA BAA support, and a vendor security package that satisfies even the strictest procurement processes.
+              </p>
+              <div className="space-y-2">
+                {[
+                  'SOC 2 Type II (in progress)',
+                  'HIPAA Business Associate Agreement available',
+                  'VPC-isolated tenant environments',
+                  'Zero data training on your workflows',
+                  'Complete VSAQ & pentest docs on request',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/trust"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors"
+              >
+                Read our full security documentation <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+              <div className="flex items-center gap-3 mb-5">
+                <Building2 className="w-5 h-5 text-indigo-400" />
+                <p className="text-white font-semibold">Built for regulated industries</p>
+              </div>
+              {[
+                { sector: 'Healthcare', detail: 'HIPAA BAA · FHIR EHR integrations · Prior auth automation' },
+                { sector: 'Financial Services', detail: 'SOC 2 controls · Data residency · Full audit trail' },
+                { sector: 'Legal & Professional', detail: 'Matter isolation · NDA-first onboarding · Conflict checks' },
+                { sector: 'Enterprise SaaS', detail: 'SSO · SCIM provisioning · Custom SLA' },
+              ].map((item) => (
+                <div key={item.sector} className="py-3 border-b border-white/10 last:border-0">
+                  <p className="text-white text-sm font-semibold">{item.sector}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why the combo is powerful */}
       <section className="py-14 bg-indigo-50 border-y border-indigo-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Why Research + Deployment Together Wins
           </h2>
-          <p className="text-slate-600 leading-relaxed mb-8">
-            Most companies spend weeks researching AI tools, then months failing to implement them because the implementation is harder than the comparison. WeCompareAI handles the research. Hiretecky handles everything after the decision — configuration, integration, testing, and ongoing management.
+          <p className="text-slate-600 leading-relaxed mb-6">
+            Most companies spend weeks researching AI tools, then months failing to implement them because implementation is harder than comparison. WeCompareAI handles the research. Hiretecky handles everything after the decision — configuration, integration, security review, testing, and ongoing management.
           </p>
           <p className="text-slate-600 mb-8">
-            You're not buying software. You're deploying a working business function. That requires more than a login.
+            You&apos;re not buying software. You&apos;re deploying a working business function. That requires more than a login.
           </p>
           <Link
             href="/demo"
