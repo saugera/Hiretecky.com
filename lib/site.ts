@@ -15,18 +15,13 @@ export const staticRoutes = [
   '/compare',
   '/contact',
   '/demo',
+  '/demos',
   '/faq',
   '/privacy',
   '/request',
   '/services',
   '/terms',
   '/trust',
-  '/portfolio',
-  '/send-resume',
-  '/hello-world',
-  '/services/mobile-app-development',
-  '/services/web-designing',
-  '/portfolio/social-media-marketing',
 ] as const
 
 export function absoluteUrl(path = '') {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Users, Award, HeartHandshake, FlaskConical } from 'lucide-react'
+import { Users, Award, HeartHandshake, FlaskConical, ShieldCheck } from 'lucide-react'
 
 export default function Differentiators() {
   return (
@@ -71,6 +71,31 @@ export default function Differentiators() {
           >
             Book a Demo →
           </Link>
+        </div>
+
+        {/* Enterprise & regulated industries strip */}
+        <div className="mt-5 rounded-2xl border border-slate-700 bg-slate-800/60 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <p className="text-sm font-semibold text-slate-300">Built for regulated environments</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Healthcare', note: 'HIPAA BAA · FHIR EHR', href: '/solutions/ai-healthcare-agents' },
+              { label: 'Finance', note: 'SOC 2 controls · Audit logs', href: '/trust' },
+              { label: 'Legal', note: 'Matter isolation · NDA-first', href: '/trust' },
+              { label: 'Enterprise SaaS', note: 'SSO · VPC isolation', href: '/trust' },
+            ].map((sector) => (
+              <Link
+                key={sector.label}
+                href={sector.href}
+                className="rounded-xl bg-slate-900 border border-slate-700 p-3 hover:border-slate-600 transition-colors"
+              >
+                <p className="text-white text-sm font-semibold">{sector.label}</p>
+                <p className="text-slate-500 text-xs mt-0.5">{sector.note}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

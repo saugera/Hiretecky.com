@@ -34,7 +34,7 @@ export default function Footer() {
               <li><Link href="/services/software-development" className="hover:text-white transition-colors">Software Development</Link></li>
               <li><Link href="/services/sales-lead-generation" className="hover:text-white transition-colors">Sales & Lead Generation</Link></li>
               <li><Link href="/services/customer-support" className="hover:text-white transition-colors">Customer Support</Link></li>
-              <li><Link href="/services/hr-recruiting" className="hover:text-white transition-colors">HR & Recruiting</Link></li>
+              <li><Link href="/solutions/ai-healthcare-agents" className="hover:text-white transition-colors">Healthcare AI Agents</Link></li>
             </ul>
           </div>
 
@@ -42,10 +42,10 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm mb-3">Company</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/demos" className="hover:text-white transition-colors">Demos</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/compare" className="hover:text-white transition-colors">Compare AI Tools</Link></li>
               <li><Link href="/demo" className="hover:text-white transition-colors">Book a Demo</Link></li>
-              <li><Link href="/request" className="hover:text-white transition-colors">Request Custom Agent</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>

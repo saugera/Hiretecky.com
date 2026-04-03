@@ -5,6 +5,10 @@ import { solutions } from '@/lib/solutions'
 import { absoluteUrl, staticRoutes } from '@/lib/site'
 
 const blogSlugs = [
+  'best-ai-agents-healthcare-compliance',
+  'hipaa-compliance-ai-agents',
+  'soc2-for-autonomous-agents',
+  'fhir-llm-integration-guide',
   'replace-sdr-with-ai-agent',
   'ai-customer-support-roi',
   'how-to-build-business-case-ai-agents',
