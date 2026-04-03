@@ -20,7 +20,19 @@ export async function POST(req: NextRequest) {
       try { contacts = JSON.parse(fs.readFileSync(file, 'utf-8')) } catch { contacts = [] }
     }
 
-    contacts.push({ ...body, submittedAt: new Date().toISOString(), id: `contact_${Date.now()}` })
+    const enterpriseReasons = [
+      'Enterprise AI & Cloud Security Audit ($15k)',
+      'Schedule a Technical Architecture Review',
+      'Healthcare AI deployment (HIPAA)',
+    ]
+    const isEnterprise = enterpriseReasons.includes(body.reason)
+
+    contacts.push({
+      ...body,
+      submittedAt: new Date().toISOString(),
+      id: `contact_${Date.now()}`,
+      priority: isEnterprise ? 'enterprise' : 'standard',
+    })
     fs.writeFileSync(file, JSON.stringify(contacts, null, 2))
 
     return NextResponse.json({ success: true })

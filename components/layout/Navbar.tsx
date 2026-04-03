@@ -11,7 +11,7 @@ const navLinks = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Demos', href: '/demos' },
   { label: 'Blog', href: '/blog' },
-  { label: 'About', href: '/about' },
+  { label: 'Audit', href: '/audit' },
 ]
 
 export default function Navbar() {

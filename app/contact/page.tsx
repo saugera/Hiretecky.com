@@ -4,14 +4,23 @@ import { useState } from 'react'
 import { CheckCircle, Loader2, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
 
 const reasons = [
-  'General inquiry',
+  'Enterprise AI & Cloud Security Audit ($15k)',
+  'Schedule a Technical Architecture Review',
   'Request a demo',
   'Custom agent build',
+  'Healthcare AI deployment (HIPAA)',
   'Pricing & plans',
   'Technical support',
   'Partnership opportunity',
   'Press & media',
+  'General inquiry',
   'Other',
+]
+
+const enterpriseReasons = [
+  'Enterprise AI & Cloud Security Audit ($15k)',
+  'Schedule a Technical Architecture Review',
+  'Healthcare AI deployment (HIPAA)',
 ]
 
 export default function ContactPage() {
@@ -218,6 +227,11 @@ export default function ContactPage() {
                           <option key={r} value={r}>{r}</option>
                         ))}
                       </select>
+                      {enterpriseReasons.includes(form.reason) && (
+                        <p className="mt-2 text-xs text-indigo-600 font-medium">
+                          ✓ Enterprise inquiry — our solutions architect will respond within 4 hours.
+                        </p>
+                      )}
                     </div>
                   </div>
 
