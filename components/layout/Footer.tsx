@@ -42,11 +42,11 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm mb-3">Company</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
               <li><Link href="/demos" className="hover:text-white transition-colors">Demos</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/compare" className="hover:text-white transition-colors">Compare AI Tools</Link></li>
-              <li><Link href="/demo" className="hover:text-white transition-colors">Book a Demo</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/audit" className="hover:text-white transition-colors">$15k Audit</Link></li>
+              <li><Link href="/roi" className="hover:text-white transition-colors">ROI Calculator</Link></li>
+              <li><Link href="/portal" className="hover:text-white transition-colors">Client Portal</Link></li>
             </ul>
           </div>
 
