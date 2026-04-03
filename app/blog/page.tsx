@@ -14,15 +14,59 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'best-ai-agents-healthcare-compliance',
+    title: 'Best AI Agents for Healthcare Compliance & Operations in 2026',
+    excerpt:
+      'A technical comparison of AI agents for healthcare — HIPAA requirements, EHR integrations, prior authorization automation, and what vendors won\'t tell you.',
+    category: 'Healthcare',
+    readTime: '11 min read',
+    date: '2026-04-01',
+    displayDate: 'April 1, 2026',
+    featured: true,
+  },
+  {
+    slug: 'hipaa-compliance-ai-agents',
+    title: 'HIPAA Compliance for AI Agents: What CIOs Must Know Before Deployment',
+    excerpt:
+      'The HIPAA rules were written before LLMs existed. Here is how they apply to AI agent deployments — BAAs, PHI handling, audit logs, and what most vendors get wrong.',
+    category: 'Healthcare',
+    readTime: '10 min read',
+    date: '2026-03-30',
+    displayDate: 'March 30, 2026',
+    featured: true,
+  },
+  {
+    slug: 'soc2-for-autonomous-agents',
+    title: 'SOC 2 Compliance for Autonomous AI Agents: A Technical Guide',
+    excerpt:
+      'SOC 2 was not designed for systems that reason autonomously. Here is how the Trust Service Criteria apply — and what enterprise buyers should demand beyond the certificate.',
+    category: 'Enterprise Security',
+    readTime: '9 min read',
+    date: '2026-03-25',
+    displayDate: 'March 25, 2026',
+    featured: false,
+  },
+  {
+    slug: 'fhir-llm-integration-guide',
+    title: 'FHIR + LLMs: How AI Agents Connect to EHRs Without Violating HIPAA',
+    excerpt:
+      'A technical walkthrough of SMART on FHIR authentication, PHI handling in LLM context, prompt injection risks, and the extraction-before-inference architecture pattern.',
+    category: 'Technical',
+    readTime: '12 min read',
+    date: '2026-03-22',
+    displayDate: 'March 22, 2026',
+    featured: false,
+  },
+  {
     slug: 'replace-sdr-with-ai-agent',
     title: 'Can You Really Replace Your SDR Team with an AI Agent?',
     excerpt:
-      'A practical breakdown of what AI sales agents can and cannot do in 2026 - with real numbers from 50+ deployments.',
+      'A practical breakdown of what AI sales agents can and cannot do in 2026 — with real numbers from 50+ deployments.',
     category: 'Sales',
     readTime: '7 min read',
     date: '2026-03-28',
     displayDate: 'March 28, 2026',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'ai-customer-support-roi',
@@ -33,13 +77,13 @@ const posts = [
     readTime: '9 min read',
     date: '2026-03-20',
     displayDate: 'March 20, 2026',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'how-to-build-business-case-ai-agents',
     title: 'How to Build the Business Case for AI Agents (Board-Ready Template)',
     excerpt:
-      "A plug-and-play framework for presenting AI agent ROI to your leadership team - including the numbers they'll actually ask about.",
+      "A plug-and-play framework for presenting AI agent ROI to your leadership team — including the numbers they'll actually ask about.",
     category: 'Strategy',
     readTime: '5 min read',
     date: '2026-03-12',
@@ -50,7 +94,7 @@ const posts = [
     slug: 'ai-agents-vs-rpa',
     title: "AI Agents vs. RPA: What's the Difference and Which Do You Need?",
     excerpt:
-      "RPA automates clicks. AI agents reason and adapt. Here's when to use each - and when to use both.",
+      "RPA automates clicks. AI agents reason and adapt. Here's when to use each — and when to use both.",
     category: 'Education',
     readTime: '6 min read',
     date: '2026-03-05',
@@ -82,6 +126,9 @@ const posts = [
 ]
 
 const categoryColors: Record<string, string> = {
+  Healthcare: 'bg-blue-50 text-blue-700 border-blue-200',
+  'Enterprise Security': 'bg-slate-100 text-slate-700 border-slate-200',
+  Technical: 'bg-cyan-50 text-cyan-700 border-cyan-200',
   Sales: 'bg-indigo-50 text-indigo-700 border-indigo-200',
   'Customer Support': 'bg-blue-50 text-blue-700 border-blue-200',
   Strategy: 'bg-violet-50 text-violet-700 border-violet-200',
